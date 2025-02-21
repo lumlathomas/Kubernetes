@@ -27,7 +27,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    eksctl version
    ```
   
-3. Create an IAM Role and attache it to EC2 instance    
+3. Create an IAM Role and attach it to EC2 instance    
    `Note: create IAM user with programmatic access if your bootstrap system is outside of AWS`   
    IAM user should have access to   
    IAM   
@@ -45,14 +45,14 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --zones <AZ-1>,<AZ-2>
    
    example:
-   eksctl create cluster --name naresh \
-      --region ap-south-1 \
+   eksctl create cluster --name lthomas \
+      --region eu-west-2 \
    --node-type t2.small \
 
 
-5. To delete the EKS clsuter 
+5. To delete the EKS cluster 
    ```sh 
-   eksctl delete cluster naresh --region ap-south-1
+   eksctl delete cluster lthomas --region eu-west-2
    ```
    
 6. Validate your cluster using by creating by checking nodes and by creating a pod 
