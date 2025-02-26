@@ -1,4 +1,4 @@
-# use any to check the result for Load balancer, ClusterIp and NodePort
+# use any to check the service type result for Load Balancer, ClusterIp and NodePort
 #with load balancer
 apiVersion: v1
 kind: Service
