@@ -15,11 +15,13 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.7.9
+        image: nginx:1.7.9  # Specify a specific version for consistency
         ports:
         - containerPort: 80
         resources:
-          # You must specify requests for CPU to autoscale
-          # based on CPU utilization
           requests:
-            cpu: "250m"
+            cpu: "250m"  # Required for HPA to scale based on CPU utilization
+            memory: "64Mi"  # Add memory request for better resource management
+          limits:
+            cpu: "500m"  # Add CPU limit to prevent overconsumption
+            memory: "128Mi"  # Add memory limit for better resource control

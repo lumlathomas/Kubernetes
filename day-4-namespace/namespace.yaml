@@ -9,9 +9,18 @@ metadata:
   name: myapp
   namespace: demo
   labels:
-      app: webapp
-      type: front-end
+    app: webapp
+    type: front-end
 spec:
   containers:
   - name: nginx-container
-    image: nginx
+    image: nginx:latest  # Specify a tag for the image
+    ports:
+    - containerPort: 80  # Expose port 80 for the nginx container
+    resources:  # Add resource requests and limits for better resource management
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"

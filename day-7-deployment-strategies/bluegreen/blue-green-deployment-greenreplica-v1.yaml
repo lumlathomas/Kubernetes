@@ -1,25 +1,27 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpd  
+  name: green-myapp
+  namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: httpd
+      app: myapp
+      replica: green
   template:
     metadata:
       labels:
-        app: httpd
+        app: myapp
+        replica: green
     spec:
       containers:
-        - name: httpd
+        - name: myapp
           image: httpd
           ports:
-            - containerPort: 80
-          env:
-            - name: TITLE
-              value: "APACHE APP2"
+            - name: http
+              containerPort: 80
           resources:
             requests:
               cpu: "250m"    # Minimum 250 millicores of CPU
@@ -27,15 +29,3 @@ spec:
             limits:
               cpu: "500m"    # Maximum 500 millicores of CPU
               memory: "512Mi"  # Maximum 512MB of memory
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: httpd  
-spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-  selector:
-    app: httpd
