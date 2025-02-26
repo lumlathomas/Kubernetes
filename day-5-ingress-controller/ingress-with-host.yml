@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: example.com # Replace this with your desired domain name
+  - host: www.lumlathomas.site # Replace this with your desired domain name
     http:
       paths:
       - path: /nginx
