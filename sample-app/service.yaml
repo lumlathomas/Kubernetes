@@ -1,0 +1,32 @@
+
+#with load balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx-service
+spec:
+  selector:
+    app: my-nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer  # Change to LoadBalancer for cloud providers
+
+
+
+#with ClusterIp
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-nginx-service
+# spec:
+#   selector:
+#     app: my-nginx
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 80
+#   type: NodePort  # Change to NodePort for external access
+
+
