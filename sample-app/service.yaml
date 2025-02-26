@@ -1,4 +1,4 @@
-
+# use any to check the result for Load balancer, ClusterIp and NodePort
 #with load balancer
 apiVersion: v1
 kind: Service
@@ -13,9 +13,25 @@ spec:
     targetPort: 80
   type: LoadBalancer  # Change to LoadBalancer for cloud providers
 
+#with ClusterIP
 
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-app-svc
+#   labels:
+#     app: my-app
+# spec:
+#   type: ClusterIP
+#   ports:
+#   - port: 80
+#     targetPort: 80
+#     protocol: TCP
+#   selector:
+#     app: my-app
 
-#with ClusterIp
+#with NodePort
+
 # apiVersion: v1
 # kind: Service
 # metadata:
