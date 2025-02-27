@@ -17,7 +17,8 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: swiggy-app
-        image: veeranarni/hotstar:latest  # Using a public image
+        #image: veeranarni/hotstar:latest  # Using a public image
+        image: nginx
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
