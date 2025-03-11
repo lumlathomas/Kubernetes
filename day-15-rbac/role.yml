@@ -5,8 +5,11 @@ metadata:
   name: developer-role
 rules:
   - apiGroups: [""] # "" indicates the core API group ["apps"]
-    resources: ["ConfigMap"]
+    resources: ["configmaps"]
     verbs: ["get", "list"]
+  # - apiGroups: [""] # "" indicates the core API group ["apps"]
+  #   resources: ["ConfigMap"]
+  #   verbs: ["get", "list"]
   - apiGroups: [""] # "" indicates the core API group ["apps"]
     resources: ["pods"]
     verbs: ["get", "list",]
