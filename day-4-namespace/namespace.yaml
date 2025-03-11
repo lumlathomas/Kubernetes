@@ -24,3 +24,4 @@ spec:
       limits:
         memory: "128Mi"
         cpu: "500m"
+   #we can create our own namespace using "kubectl create ns test", displays all default+custom namespace using "kubectl get ns", if your pod need to run on your custom namespace then use "kubectl get pods -n test" , namespace are created for identifying different envirnoment like test, dev etc, by default, the namespace is "Namespace:default"

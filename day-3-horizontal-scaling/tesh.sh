@@ -4,4 +4,4 @@ for j in {1..10}; do
     done  
     wait  # Wait for all background curl processes to finish before next iteration
 done
-# we need to change the http url address
+# we need to change the http url address, give lb url using kubectl svc here
